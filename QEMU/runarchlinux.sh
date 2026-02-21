@@ -14,6 +14,10 @@ QGA_SOCKET="/tmp/qga.sock"
 HOST_SHARE_DIR="./qemu-share"
 GUEST_MOUNT_TAG="hostshare"
 
+if [ ! -f ${DISK_IMG}]; then
+  qemu-img create -f qcow2 ${DISK_IMG} 80G
+fi
+
 if [ ! -f ./OVMF_VARS.fd ]; then
   cp /usr/share/edk2/x64/OVMF_VARS.4m.fd ./OVMF_VARS.fd
   chmod u+rw ./OVMF_VARS.fd

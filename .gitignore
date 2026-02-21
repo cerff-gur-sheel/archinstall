@@ -1,0 +1,4 @@
+OVMF_VARS.fd
+archlinux.qcow2
+qemu-share/
+runarchlinux.sh
